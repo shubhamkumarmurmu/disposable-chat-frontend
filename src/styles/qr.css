@@ -1,0 +1,34 @@
+.qr-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+}
+
+.qr-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 360px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.qr-card h2 {
+  margin-bottom: 1.5rem;
+}
+
+.qr-text {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.qr-card input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
