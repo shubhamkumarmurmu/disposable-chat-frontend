@@ -8,7 +8,7 @@ export default function CreateChat() {
   const [chatId, setChatId] = useState("");
   const qrValue = `https://localhost:3000//join?chatId=${chatId}`;
   const navigate = useNavigate();
-  const {currentUser} = useAuth();
+  const {user} = useAuth();
 
   const generateChatId = useCallback(() => {
     const StringLength = 20;
@@ -21,7 +21,7 @@ export default function CreateChat() {
       setChatId(Id);
   }, [setChatId]);
 
-  if (!currentUser) {
+  if (!user) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <h2 className=" text-3xl">Please log in to create a chat session.</h2>

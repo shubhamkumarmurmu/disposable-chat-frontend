@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Chatpage from "./pages/ChatPage";
 import CreateChat from "./pages/CreateChat";
 import {AuthProvider} from "./context/AuthContext";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/join" element={<Chatpage />} />
           <Route path="/create-room" element={<CreateChat />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/signup.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -9,6 +11,8 @@ export default function Signup() {
     password: "",
     confirmPassword: "",
   });
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
 
   const handleChange = (e) => {
     setFormData({
@@ -25,8 +29,8 @@ export default function Signup() {
       return;
     }
 
-    // Replace with API call
-    console.log(formData);
+    setUser(formData);
+    navigate("/create-room");
   };
 
   return (
@@ -85,7 +89,10 @@ export default function Signup() {
         <button type="submit">Sign Up</button>
 
         <p className="footer-text">
-          Already have an account? <span><Link to="/login">Login</Link></span>
+          Already have an account?{" "}
+          <span>
+            <Link to="/login">Login</Link>
+          </span>
         </p>
       </form>
     </div>
